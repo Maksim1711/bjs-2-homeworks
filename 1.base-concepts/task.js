@@ -1,16 +1,12 @@
+"use strict";
 function solveEquation(a, b, c) {
 	let arr;
 	// код для задачи №1 писать здесь
-	"use strict";
-	arr = {};
-	let discriminant = [b ** 2 - 4 * a * c];
-	if (discriminant < 0)
-		return [];
+	arr = [];
+	let discriminant = b ** 2 - 4 * a * c;
 	if (discriminant > 0) {
-		let root = [];
-		root.push((-b + Math.sqrt(discriminant)) / (2 * a));
-		root.push((-b - Math.sqrt(discriminant)) / (2 * a));
-		arr = root;
+		arr.push((-b + Math.sqrt(discriminant)) / (2 * a));
+		arr.push((-b - Math.sqrt(discriminant)) / (2 * a));
 	} else if (discriminant == 0)
 		arr = [(-b + Math.sqrt(discriminant)) / (2 * a)];
 	return arr; // array
