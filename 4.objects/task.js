@@ -31,9 +31,9 @@ Student.prototype.addMarks = function (...rest) {
 }
 
 Student.prototype.getAverage = function () {
-	let sum = 0;
-	this.marks.forEach((mark) => { sum += parseInt(mark) });
-	return sum / this.marks.length;
+	return this.marks.reduce(function (sum, grade) {
+		return sum + grade;
+	}, 0) / this.marks.length;
 }
 
 Student.prototype.exclude = function (reason) {
