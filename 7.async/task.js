@@ -20,9 +20,10 @@ class AlarmClock {
 	};
 
 	removeClock(id) {
+		let successfully = this.alarmCollection.length;
 		this.alarmCollection = this.alarmCollection.filter((item) => item.id !== id);
-		this.alarmCollection.length > this.alarmCollection.length;
-		return;
+		let failure = this.alarmCollection.length;
+		return successfully > failure;
 	};
 
 	getCurrentFormattedTime() {
@@ -30,8 +31,8 @@ class AlarmClock {
 	};
 
 	start() {
-		let func = this.getCurrentFormattedTime();
 		function checkClock(call) {
+			let func = this.getCurrentFormattedTime.bind();
 			if (func === call.time) {
 				return call.callback();
 			};
