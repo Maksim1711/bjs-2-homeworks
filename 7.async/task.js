@@ -31,8 +31,8 @@ class AlarmClock {
 	};
 
 	start() {
+		let func = this.getCurrentFormattedTime();
 		function checkClock(call) {
-			let func = this.getCurrentFormattedTime.bind();
 			if (func === call.time) {
 				return call.callback();
 			};
