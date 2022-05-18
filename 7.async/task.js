@@ -31,16 +31,16 @@ class AlarmClock {
 	};
 
 	start() {
-		let func = this.getCurrentFormattedTime();
+		const checkAlarm = checkClock.bind(this);
 		function checkClock(call) {
-			if (func === call.time) {
+			if (this.getCurrentFormattedTime() === call.time) {
 				return call.callback();
 			};
 		};
 		if (this.timerId === null) {
 			this.timerId = setInterval(() => {
 				this.alarmCollection.forEach(elem => {
-					checkClock(elem);
+					checkAlarm(elem);
 				})
 			}, 1000);
 		};
